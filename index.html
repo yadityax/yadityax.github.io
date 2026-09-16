@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditya Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #55595e;
+    --link: #1772d0;
+    --link-hover: #f09228;
+    --highlight-bg: #fffce8;
+    --highlight-border: #f0e4a8;
+    --rule: #e6e6e6;
+    --thumb-a: #1772d0;
+    --thumb-b: #123a63;
+  }
+
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #14171a;
+      --text: #e9e9e9;
+      --muted: #9aa0a6;
+      --link: #5aa9ff;
+      --link-hover: #ffb15c;
+      --highlight-bg: #2a2712;
+      --highlight-border: #4a431e;
+      --rule: #2b2f33;
+      --thumb-a: #2f6fb5;
+      --thumb-b: #17293e;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #14171a;
+    --text: #e9e9e9;
+    --muted: #9aa0a6;
+    --link: #5aa9ff;
+    --link-hover: #ffb15c;
+    --highlight-bg: #2a2712;
+    --highlight-border: #4a431e;
+    --rule: #2b2f33;
+    --thumb-a: #2f6fb5;
+    --thumb-b: #17293e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  a:hover, a:focus {
+    color: var(--link-hover);
+    text-decoration: none;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 22px 64px;
+  }
+
+  /* header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .header-text {
+    flex: 1 1 380px;
+    min-width: 260px;
+  }
+
+  .name {
+    margin: 0 0 14px;
+    font-size: 33px;
+    font-weight: 700;
+  }
+
+  .bio {
+    margin: 0 0 14px;
+    max-width: 62ch;
+  }
+
+  .bio-links {
+    color: var(--muted);
+  }
+
+  .avatar {
+    flex: 0 0 148px;
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--thumb-a), var(--thumb-b));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    user-select: none;
+  }
+
+  /* section headers */
+  h2 {
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-size: 21px;
+    padding-top: 8px;
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+  }
+
+  .section {
+    margin-top: 8px;
+    margin-bottom: 36px;
+  }
+
+  .section-intro {
+    color: var(--muted);
+    max-width: 64ch;
+    margin: 0 0 22px;
+  }
+
+  /* publications */
+  .paper {
+    display: flex;
+    gap: 22px;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .paper.highlight {
+    background: var(--highlight-bg);
+    border: 1px solid var(--highlight-border);
+  }
+
+  .paper-thumb {
+    flex: 0 0 118px;
+    width: 118px;
+    height: 118px;
+    border-radius: 6px;
+    background: linear-gradient(150deg, var(--thumb-a), var(--thumb-b));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px;
+    line-height: 1.25;
+  }
+
+  .paper-body {
+    flex: 1 1 340px;
+    min-width: 220px;
+  }
+
+  .papertitle {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .authors {
+    margin-top: 4px;
+  }
+
+  .venue {
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .desc {
+    margin-top: 8px;
+    color: var(--text);
+  }
+
+  /* projects */
+  .project {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project:last-child { border-bottom: none; }
+
+  .project-title {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .project-stack {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  .project-desc {
+    margin-top: 6px;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    .header { justify-content: center; text-align: center; }
+    .bio { margin-left: auto; margin-right: auto; }
+    .paper { justify-content: center; text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="header-text">
+      <p class="name">Aditya Yadav</p>
+      <p class="bio">
+        I'm an MTech student in Artificial Intelligence, in the Department of Computer Science and Engineering at
+        <a href="https://iitj.ac.in/" target="_blank" rel="noopener">IIT Jodhpur</a>. I work in the CLARITY Lab,
+        advised by Dr. Hardik Jain, where my research is on hardware-aware neural architecture search for stereo
+        depth estimation in visual SLAM &mdash; making 3D perception fast enough to run on embedded hardware like
+        the Jetson Orin Nano without giving up accuracy.
+      </p>
+      <p class="bio-links">
+        <a href="mailto:yaditya20x@gmail.com">Email</a> &nbsp;/&nbsp;
+        <a href="https://github.com/yadityax" target="_blank" rel="noopener">GitHub</a> &nbsp;/&nbsp;
+        <!-- <a href="#">CV</a> &nbsp;/&nbsp;
+        <a href="#">Google Scholar</a> -->
+      </p>
+    </div>
+    <div class="avatar" aria-hidden="true">AY</div>
+  </div>
+
+  <div class="section">
+    <h2>Research</h2>
+    <p class="section-intro">
+      I'm interested in efficient deep learning, neural architecture search, and 3D vision &mdash; specifically
+      how to make stereo depth estimation and visual SLAM systems run in real time on power- and memory-constrained
+      edge hardware.
+    </p>
+
+    <div class="paper highlight">
+      <div class="paper-thumb">EdgeStereo<br>NAS</div>
+      <div class="paper-body">
+        <div class="papertitle">EdgeStereoNAS: Hardware-Aware Neural Architecture Search for Real-Time Stereo Depth Estimation in Visual SLAM</div>
+        <div class="authors"><strong>Aditya Yadav</strong>, advised by Dr. Hardik Jain</div>
+        <div class="venue">MTech Thesis, IIT Jodhpur &mdash; in progress, 2026</div>
+        <p class="desc">
+          A progressive-shrinking elastic supernet paired with NSGA-II multi-objective search discovers stereo-depth
+          architectures that trade off accuracy, latency, and memory footprint. Targets deployment on a Jetson Orin
+          Nano 8GB with TensorRT, integrated into ORB-SLAM3 and evaluated on the KITTI and EuRoC benchmarks.
+        </p>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-thumb">Jetson-ORB<br>SLAM3</div>
+      <div class="paper-body">
+        <div class="papertitle">Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</div>
+        <div class="authors">Rajat Roy, <strong>Aditya Yadav</strong>, Dr. Hardik Jain</div>
+        <div class="venue">Submitted to ICVGIP 2026 &mdash; under double-blind review</div>
+        <p class="desc">
+          A GPU-accelerated implementation of ORB-SLAM3 for the Jetson Orin Nano that preserves tracking accuracy
+          while substantially improving throughput, aimed at making visual SLAM practical on power-constrained
+          robotics hardware.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+    <p class="section-intro">A few other things I've built alongside coursework and research.</p>
+
+    <div class="project">
+      <div class="project-title">ResearchCopilot</div>
+      <div class="project-stack">Retrieval-augmented generation &middot; MLOps</div>
+      <p class="project-desc">A production-grade RAG research assistant, built with a full MLOps pipeline for reproducible deployment.</p>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>
